@@ -1,3 +1,9 @@
+//定义变量
 $g4import-reset: true;
+$gbasic-path: unquote('assets/');
+$gbasic-family: 'Microsoft YaHei';
+$gbasic-size: 20px;
+$gbasic-color: #333;
 
+//引用库
 @import '../node_modules/@vope/scss/sass/main';
