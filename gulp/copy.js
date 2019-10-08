@@ -95,7 +95,7 @@ class CopyClass{
       const [src, alias] = value.split('|');
       const matchs = src.match(RE_OPTIM);
       if(!matchs) throw new Error(`Wrong format of "${src}"`);
-      const [_, $1, $2, $3] = matchs.map((value, index) => index && value.replace(RE_CUT, ''));
+      const [_, $1, $2, $3] = matchs.map((value, index) => index && (value || '').replace(RE_CUT, ''));
       const key = (alias ? $3.replace(RE_ALIAS, alias) : $3) |> join($1, ?);
       cache[key] = join(basic, $1, $2, $3);
     });
