@@ -58,4 +58,4 @@ export default dev
         return () => watcher;
       })(),
     ]) 
-  : [];
+  : (cb) => cb();
