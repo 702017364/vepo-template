@@ -19,4 +19,7 @@ export default {
   'promise-polyfill': [
     '<dist/>polyfill.min.js|index.js'
   ],
+  'chroma-js': [ //2.0.x
+    'chroma.min.js|index.js',
+  ],
 };
