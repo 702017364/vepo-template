@@ -11,12 +11,7 @@ import plugins from './babel-cli';
 const imp = setting.import;
 const isImp = typeof imp == 'object';
 const impRollup = isImp
-  ? rollup({
-    input: imp.input,
-    output: {
-      format: imp.format,
-    },
-  }) 
+  ? rollup(imp) 
   : () => {};
 
 export default () => {

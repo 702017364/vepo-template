@@ -36,7 +36,10 @@ const setting = do{
     imp === 'rollup' && (imp = {});
     if(imp && typeof imp == 'object'){
       imp.input = (imp.input || 'index.js') |> resolveMiddlePath(?, table.src);
-      imp.format = imp.format || 'iife';
+      const output = imp.output = imp.output || {};
+      Array.isArray(output) ? output : [output] |> [].forEach.call(?, (item) => {
+        item.format = item.format || imp.format || 'iife';
+      });
     }
     value.import = imp;
   } catch{}

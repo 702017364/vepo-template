@@ -42,7 +42,7 @@ npm run dev
   - 'commonjs' 编译为 commonjs 格式
   - 'systemjs' 编译为 systemjs 格式
   - 'umd' 编译为 umd 格式
-  - 对象类型（非 null） 使用模块打包器进行打包（参考：https://www.rollupjs.com/）
+  - 对象类型（非 null） 使用模块打包器进行打包（参考：https://www.npmjs.com/package/gulp-rollup）
     * input 定义打包入口（默认值： 'index.js'）
     * format 定义打包格式（默认值： 'iife'）
   - 'rollup' 使用模块打包器进行打包（默认设置）
