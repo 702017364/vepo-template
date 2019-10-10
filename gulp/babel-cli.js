@@ -1,5 +1,12 @@
 import setting from './setting';
 
+const modules = ({
+  amd: '@babel/plugin-transform-modules-amd',
+  commonjs: '@babel/plugin-transform-modules-commonjs',
+  systemjs: '@babel/plugin-transform-modules-systemjs',
+  umd: '@babel/plugin-transform-modules-umd',
+})[setting.import];
+
 const builts = [
   [ '@babel/plugin-proposal-class-properties', { loose: true } ],
   [ '@babel/plugin-proposal-private-methods', { loose: true } ],
@@ -11,6 +18,8 @@ const builts = [
   '@babel/plugin-proposal-throw-expressions',
   [ '@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' } ],
 ];
+
+modules && builts.push(modules);
 
 export default do{
   const { 

@@ -2,7 +2,11 @@ import fs from 'fs';
 import { join } from 'path';
 import dev from './dev';
 import table from './table';
-import { resolvePath } from './function';
+import { resolvePath, depthClone } from './function';
+
+const resolveMiddlePath = (value, key) => {
+  return join(refname, key) |> resolvePath(value, ?);
+};
 
 /**
  * gulpfile.js 所在目录
@@ -26,7 +30,15 @@ const setting = do{
   let value = {};
   try{
     fs.statSync(src);
-    value = require(src).default || {};
+    value = (require(src).default |> depthClone) || {};
+    let imp = value.import;
+    imp || (imp = false);
+    imp === 'rollup' && (imp = {});
+    if(imp && typeof imp == 'object'){
+      imp.input = (imp.input || 'index.js') |> resolveMiddlePath(?, table.src);
+      imp.format = imp.format || 'iife';
+    }
+    value.import = imp;
   } catch{}
   value;
 };
@@ -34,10 +46,6 @@ const setting = do{
  * gulp 环境设置
  */
 export default setting;
-
-const resolveMiddlePath = (value, key) => {
-  return join(refname, key) |> resolvePath(value, ?);
-};
 
 /**
  * CSS 资源目录

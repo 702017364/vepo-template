@@ -36,6 +36,16 @@ npm run dev
 * [entry](setting.js)：是否使用 index.html 文件（默认值：true）
 * [babelrc](setting.js)：是否开启 es5 语法编译（默认值：false）
 * [output](setting.js)：设置样式编译出口（多个值则代表多个出口）（默认值：'index.scss'）
+* [import](setting.js)：设置 import 的编译方式（默认值：false）
+  - false 按默认行为处理（babelrc 值为 fasle 不进行编译，为 true 则会被编译为 amd 格式）
+  - 'amd' 编译为 amd 格式
+  - 'commonjs' 编译为 commonjs 格式
+  - 'systemjs' 编译为 systemjs 格式
+  - 'umd' 编译为 umd 格式
+  - 对象类型（非 null） 使用模块打包器进行打包（参考：https://www.rollupjs.com/）
+    * input 定义打包入口（默认值： 'index.js'）
+    * format 定义打包格式（默认值： 'iife'）
+  - 'rollup' 使用模块打包器进行打包（默认设置）
 * [cdn](setting.js)：设置 cdn 的安装包名（默认值：[]）
 * [merge](setting.js)：设置需要合并的 cdn （默认值：[]）
   - '/' 打头视为从当前跟目录开始查找的相对路径

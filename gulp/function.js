@@ -77,3 +77,15 @@ export const mkdirSync = (src, place) => {
     fs.existsSync(place) || fs.mkdirSync(place);
   });
 };
+
+export const depthClone = (value) => {
+  if(!value || typeof value != 'object') return value;
+  if(value instanceof Array) return value.map(depthClone);
+  const obj = {};
+  for(let key in value){
+    key != 'constructor'
+      && value.hasOwnProperty(key)
+      && (obj[key] = depthClone(value[key]));
+  }
+  return obj;
+};
