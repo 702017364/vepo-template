@@ -48,6 +48,6 @@
     "node-sass": "^4.12.0"
   },
   "dependencies": {
-    "@vope/scss": "^2.0.6-bate.4"
+    "@vope/scss": "^2.1.1"
   }
 }
