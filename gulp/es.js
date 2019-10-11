@@ -14,11 +14,11 @@ export default () => {
   return gulp
     .src(mjss, { allowEmpty: true })
     .pipe(gulpif(dev, sourcemaps.init()))
-    .pipe(gulpif(typeof imp == 'object', rollup(imp)))
     .pipe(babel({
       babelrc: setting.babelrc,
       plugins,
     }))
+    .pipe(gulpif(typeof imp == 'object', rollup(imp)))
     .pipe(gulpif(!dev, uglify()))
     .pipe(gulpif(dev, sourcemaps.write('./')))
     .pipe(dest('bin') |> gulp.dest);
