@@ -9,16 +9,12 @@ import dev from './dev';
 import plugins from './babel-cli';
 
 const imp = setting.import;
-const isImp = typeof imp == 'object';
-const impRollup = isImp
-  ? rollup(imp) 
-  : () => {};
 
 export default () => {
   return gulp
     .src(mjss, { allowEmpty: true })
     .pipe(gulpif(dev, sourcemaps.init()))
-    .pipe(gulpif(isImp, impRollup))
+    .pipe(gulpif(typeof imp == 'object', rollup(imp)))
     .pipe(babel({
       babelrc: setting.babelrc,
       plugins,
