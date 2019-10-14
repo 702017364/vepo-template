@@ -47,7 +47,8 @@
     "gulp-watch": "^5.0.1",
     "http-proxy-middleware": "^0.20.0",
     "minimist": "^1.2.0",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "through2": "^3.0.1"
   },
   "dependencies": {
     "@vope/scss": "^2.1.1"
