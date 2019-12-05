@@ -45,7 +45,6 @@ npm run dev
   - 属性 output.format 默认值为 'iife'
 * [presets](template.json)：设置 babel 预设（默认值：[]）
 * [plugins](template.json)：设置 babel 插件（默认值：[]）
-* [target](template.json)：设置代理服务器，要求代理接口以 '/api' 打头（默认值：null）
 * [browsersync](template.json)：设置 browsersync（默认值：null）
   - 非空字符串代表代理目标，中间件使用默认配置，代理接口以 '/api' 打头
   - 对象类型则代表自定义设置
