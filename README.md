@@ -24,28 +24,29 @@ npm run dev
 ```
 
 ## 使用说明
-* assets CSS 资源目录（主要为背景图和字体）
-* views 子页面目录（html 文件）
-* src 源码目录（js 文件）
-* styles 样式目录（scss 文件）
-* static 静态资源目录（页面引用的图片、视频、数据文件等）
-* dist 发布目录
+* __assets__ CSS 资源目录（主要为背景图和字体）
+* __views__ 子页面目录（html 文件）
+* __src__ 源码目录（js 文件）
+* __styles__ 样式目录（scss 文件）
+* __static__ 静态资源目录（页面引用的图片、视频、数据文件等）
+* __dist__ 发布目录
 * [env](template.json)：是否开启 es5 语法编译（默认值：false）
 * [entry](template.json)：是否使用 index.html 文件（默认值：true）
 * [base](template.json)：服务器启动目录（默认值：'./'）
 * [runtime](template.json)：是否启用默认的 transform-runtime （默认值：true）
-* [output](template.json)：设置样式编译出口（多个值则代表多个出口）（默认值：'index.scss'）
+* [rename](template.json)：[重命名](https://github.com/hparra/gulp-rename)样式出口文件（支持多出口设置）（默认值：''）
+* [output](template.json)：设置样式编译出口（支持多出口设置）（默认值：'index.scss'）
 * [cdn](template.json)：设置 cdn 的安装包名（默认值：[]）
 * [merge](template.json)：设置需要合并的 cdn （默认值：[]）
   - '/' 打头视为从当前跟目录开始查找的相对路径
   - 其它则视为从 cdn 目录开始查找的安装包下文件的相对路径
   - 仅指定目录名的会自动指向该目录下的 index.js 文件
-* [rollup](template.json)：配置 rollup（默认值...）
-  - 属性 input 默认值为 'index.js'
-  - 属性 output.format 默认值为 'iife'
-* [presets](template.json)：设置 babel 预设（默认值：[]）
-* [plugins](template.json)：设置 babel 插件（默认值：[]）
-* [browsersync](template.json)：设置 browsersync（默认值：null）
+* [rollup](template.json)：配置 [rollup](https://www.rollupjs.com/guide/introduction/)
+  - 属性 **input** 默认值为 'index.js'
+  - 属性 **output.format** 默认值为 'iife'
+* [presets](template.json)：设置 babel [预设](https://www.babeljs.cn/docs/presets)（默认值：[]）
+* [plugins](template.json)：设置 babel [插件](https://www.babeljs.cn/docs/plugins)（默认值：[]）
+* [browsersync](template.json)：设置 [browsersync](http://www.browsersync.cn/docs/options/)（默认值：null）
   - 非空字符串代表代理目标，中间件使用默认配置，代理接口以 '/api' 打头
   - 对象类型则代表自定义设置
 * [rules](template.json)：自定义 cdn 拷贝规则：

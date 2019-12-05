@@ -1,6 +1,6 @@
 {
   "name": "@vope/template",
-  "version": "2.0.0",
+  "version": "0.0.0",
   "description": "项目模板",
   "scripts": {
     "dev": "template-node",
@@ -9,8 +9,8 @@
   "author": "@vope",
   "license": "ISC",
   "dependencies": {
-    "@vope/scss": "^2.1.1",
-    "@vope/template-node": "^1.0.1"
+    "@vope/scss": "^2.4.0",
+    "@vope/template-node": "git+https://github.com/702017364/vope-template-node.git"
   },
   "repository": {
     "type": "git",
