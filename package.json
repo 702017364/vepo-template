@@ -9,7 +9,7 @@
   "author": "@vope",
   "license": "ISC",
   "dependencies": {
-    "@vope/scss": "^2.4.0",
+    "@vope/scss": "^2.4.2",
     "@vope/template-node": "git+https://github.com/702017364/vope-template-node.git"
   },
   "repository": {
